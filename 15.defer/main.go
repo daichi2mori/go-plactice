@@ -5,11 +5,14 @@ import (
 	"os"
 )
 
+// deferは関数の終わりに実行される（return直後）
 func TestDefer() {
 	defer fmt.Println("END")
 	fmt.Println("START")
 }
 
+// deferはstack形式で実行される(6から起動)
+// 後入れ先出し（Last In First Out : LIFO）
 func RunDefer() {
 	defer fmt.Println("4")
 	defer fmt.Println("5")
